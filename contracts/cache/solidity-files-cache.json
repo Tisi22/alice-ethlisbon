@@ -1,43 +1,6 @@
 {
   "_format": "hh-sol-cache-2",
   "files": {
-    "/home/tisi/canto-hackathon-MintWorld/contracts-mintmons/contracts/MintFirstMintmon.sol": {
-      "lastModificationDate": 1680509876167,
-      "contentHash": "01d30284b2ba54d004e5cf434643600c",
-      "sourceName": "contracts/MintFirstMintmon.sol",
-      "solcConfig": {
-        "version": "0.8.19",
-        "settings": {
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "@openzeppelin/contracts/access/Ownable.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.18"
-      ],
-      "artifacts": [
-        "MintFirstMintmon",
-        "Turnstile"
-      ]
-    },
     "/home/tisi/canto-hackathon-MintWorld/contracts-mintmons/node_modules/@openzeppelin/contracts/access/Ownable.sol": {
       "lastModificationDate": 1680508113068,
       "contentHash": "e436cea06129be2c73cda4b1acc848b5",
@@ -106,48 +69,6 @@
       ],
       "artifacts": [
         "Context"
-      ]
-    },
-    "/home/tisi/canto-hackathon-MintWorld/contracts-mintmons/contracts/Mintmons.sol": {
-      "lastModificationDate": 1680516383105,
-      "contentHash": "b4a575547bbccdb67415e33c627d334f",
-      "sourceName": "contracts/Mintmons.sol",
-      "solcConfig": {
-        "version": "0.8.19",
-        "settings": {
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "hardhat/console.sol",
-        "@openzeppelin/contracts/access/AccessControl.sol",
-        "@openzeppelin/contracts/access/Ownable.sol",
-        "@openzeppelin/contracts/token/ERC721/ERC721.sol",
-        "@openzeppelin/contracts/utils/cryptography/ECDSA.sol",
-        "@openzeppelin/contracts/utils/cryptography/draft-EIP712.sol",
-        "./MintmonsUriStorage.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.18"
-      ],
-      "artifacts": [
-        "Mintmons"
       ]
     },
     "/home/tisi/canto-hackathon-MintWorld/contracts-mintmons/node_modules/hardhat/console.sol": {
@@ -334,43 +255,6 @@
         "^0.8.0"
       ],
       "artifacts": []
-    },
-    "/home/tisi/canto-hackathon-MintWorld/contracts-mintmons/contracts/MintmonsUriStorage.sol": {
-      "lastModificationDate": 1680516278495,
-      "contentHash": "8a5e20b54de731c2ab444e640ef47649",
-      "sourceName": "contracts/MintmonsUriStorage.sol",
-      "solcConfig": {
-        "version": "0.8.19",
-        "settings": {
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "@openzeppelin/contracts/token/ERC721/ERC721.sol",
-        "@openzeppelin/contracts/utils/Base64.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.18"
-      ],
-      "artifacts": [
-        "MintmonsUriStorage"
-      ]
     },
     "/home/tisi/canto-hackathon-MintWorld/contracts-mintmons/node_modules/@openzeppelin/contracts/access/IAccessControl.sol": {
       "lastModificationDate": 1680508112218,
