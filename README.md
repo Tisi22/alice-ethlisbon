@@ -3,7 +3,7 @@
 ## Links
 
 * Smart Contracts: [github](https://github.com/Tisi22/alice-ethlisbon/tree/main/contracts)
-* Demo: [Click here to play](https://gateway.lighthouse.storage/ipfs/QmW2viniaa2NLD2V8m9Uw87maNs6jFCJG7wQGbkAmqWyrD/)
+* Demo: [Click here to play](https://gateway.lighthouse.storage/ipfs/QmNwcrt9zsUTSVsa2rzNi3JZPbdf1xUmBNpa26TNHLasBK/)
 
 ## Description
 
