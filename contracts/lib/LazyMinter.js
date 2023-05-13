@@ -1,7 +1,7 @@
 const ethers = require('ethers')
 
 // These constants must match the ones used in the smart contract.
-const SIGNING_DOMAIN_NAME = "Alice-Voucher"
+const SIGNING_DOMAIN_NAME = "alice-ethlisbon"
 const SIGNING_DOMAIN_VERSION = "1"
 
 
