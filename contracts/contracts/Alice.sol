@@ -2,26 +2,16 @@
 pragma solidity ^0.8.9;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
-import "@openzeppelin/contracts/security/Pausable.sol";
-import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/cryptography/ECDSA.sol";
 import "@openzeppelin/contracts/utils/cryptography/draft-EIP712.sol";
 import "@openzeppelin/contracts/access/AccessControl.sol";
 
-contract Alice is ERC20, EIP712, AccessControl, Pausable, Ownable {
+contract Alice is ERC20, EIP712, AccessControl {
 
   bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
   string private constant SIGNING_DOMAIN = "Alice-Voucher";
   string private constant SIGNATURE_VERSION = "1";
 
-
-  function pause() public onlyOwner {
-      _pause();
-  }
-
-  function unpause() public onlyOwner {
-      _unpause();
-  }
 
   struct ALCVoucher {
     uint256 amount;
@@ -38,7 +28,7 @@ contract Alice is ERC20, EIP712, AccessControl, Pausable, Ownable {
   /// @notice Redeems an Voucher for an amount, creating it in the process.
   /// @param redeemer The address of the account which will receive the amount of ALC upon success.
   /// @param voucher A signed Voucher that describes the amount to receive.
-  function redeem(address redeemer, ALCVoucher calldata voucher) public whenNotPaused {
+  function redeem(address redeemer, ALCVoucher calldata voucher) public {
    
     // make sure signature is valid and get the address of the signer
     address signer = _verify(voucher);
@@ -78,14 +68,4 @@ contract Alice is ERC20, EIP712, AccessControl, Pausable, Ownable {
     return ECDSA.recover(digest, voucher.signature);
   }
 
-
-  //Override functions
-
-  function _beforeTokenTransfer(address from, address to, uint256 amount)
-      internal
-      whenNotPaused
-      override
-  {
-      super._beforeTokenTransfer(from, to, amount);
-  }
   }
