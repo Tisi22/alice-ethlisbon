@@ -641,8 +641,8 @@
       ]
     },
     "/home/tisi/alice-ethlisbon/contracts/contracts/Alice.sol": {
-      "lastModificationDate": 1683981848724,
-      "contentHash": "390bfe2142a79dc345a87d3926f2848a",
+      "lastModificationDate": 1683994749506,
+      "contentHash": "2a661300876afed7c3c65c04527419f0",
       "sourceName": "contracts/Alice.sol",
       "solcConfig": {
         "version": "0.8.19",
@@ -669,8 +669,6 @@
       },
       "imports": [
         "@openzeppelin/contracts/token/ERC20/ERC20.sol",
-        "@openzeppelin/contracts/security/Pausable.sol",
-        "@openzeppelin/contracts/access/Ownable.sol",
         "@openzeppelin/contracts/utils/cryptography/ECDSA.sol",
         "@openzeppelin/contracts/utils/cryptography/draft-EIP712.sol",
         "@openzeppelin/contracts/access/AccessControl.sol"
