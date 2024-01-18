@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.9;
+pragma solidity ^0.8.20;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/utils/cryptography/ECDSA.sol";
-import "@openzeppelin/contracts/utils/cryptography/draft-EIP712.sol";
+import "@openzeppelin/contracts/utils/cryptography/EIP712.sol";
 import "@openzeppelin/contracts/access/AccessControl.sol";
 
 interface IBlast{
@@ -26,9 +26,10 @@ contract Alice is ERC20, EIP712, AccessControl {
   constructor(address minter, address gov)
     ERC20("Alice", "ALC")
     EIP712(SIGNING_DOMAIN, SIGNATURE_VERSION) {
-    _setupRole(MINTER_ROLE, minter);
+    _grantRole(MINTER_ROLE, minter);
+    _grantRole(DEFAULT_ADMIN_ROLE, _msgSender());
     IBlast(0x4300000000000000000000000000000000000002).configureClaimableGas();
-		IBlast(0x4300000000000000000000000000000000000002).configureGovernor(gov);
+	IBlast(0x4300000000000000000000000000000000000002).configureGovernor(gov);
   }
   
 
