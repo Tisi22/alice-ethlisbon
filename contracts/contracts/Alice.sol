@@ -6,6 +6,11 @@ import "@openzeppelin/contracts/utils/cryptography/ECDSA.sol";
 import "@openzeppelin/contracts/utils/cryptography/draft-EIP712.sol";
 import "@openzeppelin/contracts/access/AccessControl.sol";
 
+interface IBlast{
+  function configureClaimableGas() external;
+  function configureGovernor(address _governor) external;
+}
+
 contract Alice is ERC20, EIP712, AccessControl {
 
   bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
@@ -18,10 +23,12 @@ contract Alice is ERC20, EIP712, AccessControl {
     bytes signature;
   }
 
-  constructor(address minter)
+  constructor(address minter, address gov)
     ERC20("Alice", "ALC")
     EIP712(SIGNING_DOMAIN, SIGNATURE_VERSION) {
-      _setupRole(MINTER_ROLE, minter);
+    _setupRole(MINTER_ROLE, minter);
+    IBlast(0x4300000000000000000000000000000000000002).configureClaimableGas();
+		IBlast(0x4300000000000000000000000000000000000002).configureGovernor(gov);
   }
   
 
@@ -68,4 +75,4 @@ contract Alice is ERC20, EIP712, AccessControl {
     return ECDSA.recover(digest, voucher.signature);
   }
 
-  }
+}

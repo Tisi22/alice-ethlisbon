@@ -6,7 +6,7 @@ const { LazyMinter } = require('../lib')
 async function deploy() {
   const [minter, redeemer, _] = await ethers.getSigners()
 
-  let factory = await ethers.getContractFactory("Alice", minter)
+  let factory = await ethers.getContractFactory("Alice", minter, minter)
   const contract = await factory.deploy(minter.address)
 
   // the redeemerContract is an instance of the contract that's wired up to the redeemer's signing key
@@ -28,7 +28,7 @@ describe("Alice", function() {
     console.log(minter)
 
     const LazyNFT = await ethers.getContractFactory("Alice");
-    const lazynft = await LazyNFT.deploy(minter);
+    const lazynft = await LazyNFT.deploy(minter, minter);
     await lazynft.deployed();
   });
 
